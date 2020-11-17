@@ -1,0 +1,13 @@
+.element__like  {
+    background-image: url("../../../images/heart.png");
+    max-width: 20.76px;
+    min-height: 18.13px;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    margin-right: 7px;
+    margin-top: 6px;
+    margin-bottom: 0;
+}
