@@ -1,7 +1,6 @@
 .popup__input {
     width: 100%;
     max-width: 358px;
-    min-height: 27px;
     display: flex;
     justify-content: center;
     border: none;

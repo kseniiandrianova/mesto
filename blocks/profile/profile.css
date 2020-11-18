@@ -4,7 +4,6 @@
     align-items: center;
     margin: 0 auto;
     max-width: 880px;
-    min-height: 120px;
     margin-top: 40px;
     
 }
@@ -20,6 +19,5 @@
         display: grid;
         grid-template-columns: 1fr;
         max-width: 282px;
-        min-height: 286px;
     } 
 }
