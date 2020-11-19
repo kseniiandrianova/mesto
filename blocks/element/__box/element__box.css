@@ -2,8 +2,6 @@
     display: flex;
     max-width: 246px;
     margin: 0 auto;
-    margin-top: 25px;
-    margin-bottom: 31px;
     justify-content: space-between;
     text-align: start;
 }
