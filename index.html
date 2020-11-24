@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="./pages/index.css" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./pages/index.css">
         <title>Mesto</title>
     </head>
     <body class="page">
@@ -12,17 +12,35 @@
                 <form class="popup__container" name="form-container">
                     <button class="popup__button-close" type="reset"></button>
                     <h2 class="popup__form-title">Редактировать профиль</h2>
-                    <input type="text" value="Жак-Ив Кусто" class="popup__input popup__input_name" name="profile-name" />
-                    <input type="text" value="Исследователь океана" class="popup__input popup__input_description" name="profile-description" />
+                    <input type="text" value="Жак-Ив Кусто" class="popup__input popup__input_name" name="profile-name">
+                    <input type="text" value="Исследователь океана" class="popup__input popup__input_description" name="profile-description">
                     <button class="popup__button-save" type="submit">Сохранить</button>
                 </form>
             </section>
+            <section class="popup popup_cards">
+                <form class="popup__container popup__add-container" name="form-pictures">
+                    <button class="popup__button-close popup__button-add-close" type="reset"></button>
+                    <h2 class="popup__form-title">Новое место</h2>
+                    <input type="text" value="Название" class="popup__input popup__input_name-card" name="card-name" required>
+                    <input type="text" value="Ссылка на картинку" class="popup__input popup__input_link" name="card-link" required>
+                    <button class="popup__button-save" type="submit">Создать</button>
+                </form>
+            </section>
+            <section class="popup popup_pictures">
+                <div class="popup__container popup__container_pictures">
+                    <button class="popup__button-close popup__close-picture" type="reset"></button>
+                    <figure class="popup__wrapper">
+                        <img class="popup__image" src="#" alt="Фотография">
+                        <figcaption class="popup__caption"></figcartion>
+                    </figure>
+                </div>
+            </section>
             <header class="header">
-                <img class="logo" src="./images/logo.svg" alt="Mesto" />
+                <img class="logo" src="./images/logo.svg" alt="Mesto">
             </header>
             <main class="content">
                 <section class="profile">
-                    <img class="profile__pic" src="./images/image.jpg" alt="Фото профиля" />
+                    <img class="profile__pic" src="./images/image.jpg" alt="Фото профиля">
                     <div class="profile__info">
                         <div class="profile__name-edit">
                             <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -33,54 +51,70 @@
                     <button type="button" class="profile__add-button"></button>
                 </section>
                 <section class="elements">
-                    <article class="element">
-                        <img class="element__image" src="./images/church-in-the-mountains.jpg" alt="Церковь в горах" />
+                    <!--<article class="element">
+                        <button type="button" class="element__button-delete"></button>
+                        <img class="element__image" src="#" alt="Фотография">
                         <div class="element__box">
-                            <h2 class="element__title">Карачаевск</h2>
-                            <button type="button" class="element__like"></button>
+                            <h2 class="element__title"></h2>
+                            <button type="button" class="element__like element__like_active"></button>
                         </div>
                     </article>
                     <article class="element">
-                        <img class="element__image" src="./images/view-of-the-elbrus.jpg" alt="Вид на эльбрус" />
+                        <button type="button" class="element__button-delete"></button>
+                        <img class="element__image" src="./images/kholmogorsky-rayon.jpg" alt="Фотография">
                         <div class="element__box">
-                            <h2 class="element__title">Гора Эльбрус</h2>
-                            <button type="button" class="element__like"></button>
+                            <h2 class="element__title">Холмогорский район</h2>
+                            <button type="button" class="element__like element__like_active"></button>
                         </div>
                     </article>
                     <article class="element">
-                        <img class="element__image" src="./images/elbrus.jpg" alt="Эльбрус" />
+                        <button type="button" class="element__button-delete"></button>
+                        <img class="element__image" src="./images/kamchatka.jpg" alt="Фотография">
                         <div class="element__box">
-                            <h2 class="element__title">Домбай</h2>
-                            <button type="button" class="element__like"></button>
+                            <h2 class="element__title">Камчатка</h2>
+                            <button type="button" class="element__like element__like_active"></button>
                         </div>
                     </article>
                     <article class="element">
-                        <img class="element__image" src="./images/view-of-the-elbrus.jpg" alt="Вид на эльбрус" />
+                        <button type="button" class="element__button-delete"></button>
+                        <img class="element__image" src="./images/ivanovo.jpg" alt="Фотография">
                         <div class="element__box">
-                            <h2 class="element__title">Гора Эльбрус</h2>
-                            <button type="button" class="element__like"></button>
+                            <h2 class="element__title">Иваново</h2>
+                            <button type="button" class="element__like element__like_active"></button>
                         </div>
                     </article>
                     <article class="element">
-                        <img class="element__image" src="./images/elbrus.jpg" alt="Эльбрус" />
+                        <button type="button" class="element__button-delete"></button>
+                        <img class="element__image" src="./images/chelyabinsk-oblast.jpg" alt="Фотография">
                         <div class="element__box">
-                            <h2 class="element__title">Домбай</h2>
-                            <button type="button" class="element__like"></button>
+                            <h2 class="element__title">Челябинская область</h2>
+                            <button type="button" class="element__like element__like_active"></button>
                         </div>
                     </article>
                     <article class="element">
-                        <img class="element__image" src="./images/church-in-the-mountains.jpg" alt="Церковь в горах" />
+                        <button type="button" class="element__button-delete"></button>
+                        <img class="element__image" src="./images/arkhyz.jpg" alt="Фотография">
                         <div class="element__box">
-                            <h2 class="element__title">Карачаево-Черкесия</h2>
-                            <button type="button" class="element__like"></button>
+                            <h2 class="element__title">Архыз</h2>
+                            <button type="button" class="element__like element__like_active"></button>
                         </div>
-                    </article>
+                    </article>-->
                 </section>
             </main>
             <footer class="footer">
                 <p class="footer__autor">©2020 Mesto Russia</p>
             </footer>
         </div>
+        <template id="template-element">
+            <article class="element">
+                <button type="button" class="element__button-delete"></button>
+                <img class="element__image" src="#" alt="Фотография">
+                <div class="element__box">
+                    <h2 class="element__title"></h2>
+                    <button type="button" class="element__like"></button>
+                </div>
+            </article>
+        </template>
         <script src="./scripts/index.js"></script>
     </body>
 </html>
