@@ -1,4 +1,3 @@
-const popup = document.querySelector('.popup');
 const popupProfile = document.querySelector('.popup_user');
 const popupAddCard = document.querySelector('.popup_cards');
 const popupImg = document.querySelector('.popup_pictures');
@@ -9,7 +8,7 @@ const buttonAddCard = document.querySelector('.profile__add-button');
 const buttonAddClose = document.querySelector('.popup__button-add-close');
 const buttonCloseImg = document.querySelector('.popup__close-picture');
 
-const popupContainer = document.querySelector('.popup__container');
+const popupProfileContainer = document.querySelector('.popup__container');
 const popupContainerAdd = document.querySelector('.popup__add-container');
 const elementBox = document.querySelector('.elements');
 
@@ -23,6 +22,8 @@ const description = document.querySelector('.profile__description');
 
 const picture = document.querySelector('.popup__image');
 const pictureCaption = document.querySelector('.popup__caption');
+
+const elementTemplate = document.querySelector('#template-element').content;
 
 
 const initialCards = [
@@ -52,10 +53,10 @@ const initialCards = [
     }
 ];
 
-initialCards.forEach(addCard);
+initialCards.forEach(createCard);
 
-function addCard(item) {
-    const elementTemplate = document.querySelector('#template-element').content;
+function createCard(item) {
+    
     const elementCard = elementTemplate.cloneNode(true);
     const buttonLike = elementCard.querySelector('.element__like');
     const buttonDelete = elementCard.querySelector('.element__button-delete');
@@ -88,8 +89,8 @@ function saveCard(evt) {
         name: inputNameCard.value,
         link: inputLink.value
     };
-    const elementCard = addCard(cardData);
-
+    const elementCard = createCard(cardData);
+    popupContainerAdd.reset();
     elementBox.prepend(elementCard);
     closePopup(popupAddCard);
 }
@@ -105,11 +106,7 @@ function openPopupProfile(){
     inputDescription.value = description.textContent;
 }
 
-function openpopupAddCard() {
-    openPopup(popupAddCard);
-    picture.src = item.link;
-    pictureCaption.textContent = item.name;
-}
+
 
 function openPopup(popup) {
     popup.classList.add('popup_opened');
@@ -135,5 +132,5 @@ buttonAddCard.addEventListener('click', () => openPopup(popupAddCard));
 buttonClose.addEventListener('click', () => closePopup(popupProfile));
 buttonAddClose.addEventListener('click', () => closePopup(popupAddCard));
 buttonCloseImg.addEventListener('click', () => closePopup(popupImg));
-popupContainer.addEventListener("submit", savePopupProfile);
+popupProfileContainer.addEventListener("submit", savePopupProfile);
 popupContainerAdd.addEventListener("submit", saveCard);

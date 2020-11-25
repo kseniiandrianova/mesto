@@ -1,18 +1,19 @@
 .popup__close-picture {
-  margin-top: -45px;
-  margin-left: 372px;
+  position: absolute;
+  top: 35px;
+  right: -40px;
 }
 
 @media screen and (max-width: 1023px) {
   .popup__close-picture {
-    margin-left: 432px;
-    margin-top: -40px;
+    top: 30px;
+    right: 5px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .popup__close-picture {
-    margin-left: 282px;
-    margin-top: -34px;
+    top: 34px;
+    right: 12px;
   }
 }
