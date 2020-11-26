@@ -53,7 +53,7 @@ const initialCards = [
     }
 ];
 
-initialCards.forEach(createCard);
+initialCards.forEach(item => elementBox.prepend(createCard(item)));
 
 function createCard(item) {
     
@@ -68,7 +68,6 @@ function createCard(item) {
 
     elementCard.querySelector('.element__image').src = item.link;
     elementCard.querySelector('.element__title').textContent = item.name;
-    elementBox.prepend(elementCard);
 
     function openPopupImg() {
         openPopup(popupImg);
