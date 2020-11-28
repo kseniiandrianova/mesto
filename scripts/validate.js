@@ -1,5 +1,5 @@
 const validationConfig = {
-    formSelector: '.popup__add-container',
+    formSelector: '.popup__form',
     inputSelector: '.popup__input',
     submitButtonSelector: '.popup__button',
     inactiveButtonClass: 'popup__button_disabled',
@@ -65,4 +65,4 @@ const validationConfig = {
     });
   }
   
-  enableValidation(validationConfig);
+enableValidation(validationConfig);
