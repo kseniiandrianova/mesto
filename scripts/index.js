@@ -105,15 +105,32 @@ function openPopupProfile(){
     inputDescription.value = description.textContent;
 }
 
+function closeOverlay(evt) {
+    if (evt.target !== evt.currentTarget) {
+        return;
+    }
+    closePopup(evt.target);
+}
+  
+
+function closeEsc(evt) {
+   if (evt.key === 'Escape') {
+    closePopup(document.querySelector('.popup_opened'));
+    }
+}
 
 
 function openPopup(popup) {
     popup.classList.add('popup_opened');
+    popup.addEventListener('mousedown', closeOverlay);
+    document.addEventListener('keydown', closeEsc);
     
 }
 
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
+    popup.removeEventListener('mousedown', closeOverlay);
+    document.removeEventListener('keydown', closeEsc);
 }
 
 function savePopupProfile(evt) {
@@ -122,8 +139,6 @@ function savePopupProfile(evt) {
     description.textContent = inputDescription.value; 
     closePopup(popupProfile);
 }
-
-
 
 
 buttonEdit.addEventListener('click', () => openPopup(popupProfile));
