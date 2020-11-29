@@ -90,7 +90,7 @@ function saveCard(evt) {
     };
     const elementCard = createCard(cardData);
     popupContainerAdd.reset();
-    setButtonState (buttonAddCard, false, validationConfig);
+    setButtonState (popupContainerAdd, false, validationConfig);
     elementBox.prepend(elementCard);
     closePopup(popupAddCard);
 }
