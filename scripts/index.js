@@ -57,10 +57,12 @@ initialCards.forEach(item => elementBox.prepend(createCard(item)));
 
 function createCard(item) {
     
+    
     const elementCard = elementTemplate.cloneNode(true);
     const buttonLike = elementCard.querySelector('.element__like');
     const buttonDelete = elementCard.querySelector('.element__button-delete');
     const pictureBox = elementCard.querySelector('.element__image');
+    
 
     buttonLike.addEventListener('click', (likeCard));
     buttonDelete.addEventListener('click', (deleteCard));
@@ -90,7 +92,8 @@ function saveCard(evt) {
     };
     const elementCard = createCard(cardData);
     popupContainerAdd.reset();
-    setButtonState (popupContainerAdd, false, validationConfig);
+    const popupAddSaveButton = popupContainerAdd.querySelector('.popup__button-save');
+    setButtonState (popupAddSaveButton, false, validationConfig);
     elementBox.prepend(elementCard);
     closePopup(popupAddCard);
 }
