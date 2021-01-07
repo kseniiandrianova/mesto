@@ -81,8 +81,6 @@ function saveCard(evt) {
     const elementCard = createCard(cardData);
     popupContainerAdd.reset();
     const popupAddSaveButton = popupContainerAdd.querySelector('.popup__button-save');
-    setButtonState (popupAddSaveButton, false, validationConfig);
-    elementBox.prepend(elementCard);
     closePopup(popupAddCard);
 }
 
@@ -90,6 +88,7 @@ function openPopupImg (name, link) {
     openPopup(popupImg);
     picture.src = link;
     pictureCaption.textContent = name;
+
 }
 
 //Открытие попапа профиля

@@ -1,8 +1,8 @@
 .popup__container_pictures {
   justify-content: flex-start;
   align-items: center;
-  max-width: 30vw;
-  max-height: 90vh;
+  max-width: 75vw;
+  max-height: 75vh;
   padding: 0;
   background: none;
   position: relative;
@@ -17,6 +17,7 @@
 
 @media screen and (max-width: 767px) {
   .popup__container_pictures {
+    margin-left: -30px;
     max-width: 98vw;
     max-height: 69vh;
   }

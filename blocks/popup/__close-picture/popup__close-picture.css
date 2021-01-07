@@ -1,7 +1,7 @@
 .popup__close-picture {
   position: absolute;
   top: 35px;
-  right: -40px;
+  right: -45px;
 }
 
 @media screen and (max-width: 1023px) {
