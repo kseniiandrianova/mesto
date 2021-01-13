@@ -22,8 +22,8 @@ const inputDescription = document.querySelector('.popup__input_description');
 const inputNameCard = document.querySelector('.popup__input_name-card');
 const inputLink = document.querySelector('.popup__input_link');
 
-const name = document.querySelector('.profile__name');
-const description = document.querySelector('.profile__description');
+const profileName = document.querySelector('.profile__name');
+const profileDescription = document.querySelector('.profile__description');
 
 const picture = document.querySelector('.popup__image');
 const pictureCaption = document.querySelector('.popup__caption');
@@ -36,7 +36,7 @@ export const validationConfig = {
     submitButtonSelector: '.popup__button',
     inactiveButtonClass: 'popup__button_disabled',
     inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__error_visible'//Зачем он мне нужен если я его нигде не использую?
+    errorClass: 'popup__error_visible'
   };
 
 function createCard(item) {
@@ -44,11 +44,10 @@ function createCard(item) {
     const card = new Card(item, cardSelector, openPopupImg);
     const elementCard = card.generateCard();
     elementBox.prepend(elementCard);
-    return elementCard;
 }
 
 initialCards.forEach((item) => {
-    const elementCard = createCard(item);
+    createCard(item);
 });
 
 //Добавление новой карточки
@@ -74,8 +73,8 @@ function openPopupImg (name, link) {
 //Открытие попапа профиля
 function openPopupProfile() {
     openPopup(popupProfile);
-    inputName.value = name.textContent; 
-    inputDescription.value = description.textContent;
+    inputName.value = profileName.textContent; 
+    inputDescription.value = profileDescription.textContent;
 }
 
 //Закрытие по оверлею
@@ -111,8 +110,8 @@ function closePopup(popup) {
 //Изменение профиля
 function savePopupProfile(evt) {
     evt.preventDefault(); 
-    name.textContent = inputName.value; 
-    description.textContent = inputDescription.value; 
+    profileName.textContent = inputName.value; 
+    profileDescription.textContent = inputDescription.value; 
     closePopup(popupProfile);
 }
 
