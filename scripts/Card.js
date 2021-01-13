@@ -8,7 +8,7 @@ export default class Card {
 
     _getTemlate() {
         const elementCard = document
-        .querySelector('#template-element')
+        .querySelector(this._cardSelector)
         .content
         .querySelector('.element')
         .cloneNode(true);
@@ -31,12 +31,9 @@ export default class Card {
     }
 
     _deleteCard() {
-        this._element.closest('.element').remove();
+        this._element.remove();
     }
 
-    _openPopupImg() {
-        this._openPopupImg.querySelector(this._name, this._link);
-    }
 
     _setEventListeners() {
         this._element.querySelector('.element__like').addEventListener('click', () => {
@@ -46,7 +43,7 @@ export default class Card {
             this._deleteCard();
         });
         this._element.querySelector('.element__image').addEventListener('click', () => {
-            this._openPopupImg(this.name, this._link);
+            this._openPopupImg(this._name, this._link);
         });
     }
 }

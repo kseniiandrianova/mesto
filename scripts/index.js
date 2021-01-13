@@ -1,5 +1,6 @@
-import { validationConfig, FormValidator } from './FormValidator.js';
+import { FormValidator } from './FormValidator.js';
 import Card from './Card.js';
+import { initialCards } from './initial-сards.js';
 
 
 const popupProfile = document.querySelector('.popup_user');
@@ -27,40 +28,20 @@ const description = document.querySelector('.profile__description');
 const picture = document.querySelector('.popup__image');
 const pictureCaption = document.querySelector('.popup__caption');
 
-const elementTemplate = document.querySelector('#template-element').content;
+const cardSelector = '#template-element';
 
-
-const initialCards = [
-    {
-        name: 'Архыз',
-        link: './images/arkhyz.jpg'
-    },
-    {
-        name: 'Челябинская область',
-        link: './images/chelyabinsk-oblast.jpg'
-    },
-    {
-        name: 'Иваново',
-        link: './images/ivanovo.jpg'
-    },
-    {
-        name: 'Камчатка',
-        link: './images/kamchatka.jpg'
-    },
-    {
-        name: 'Холмогорский район',
-        link: './images/kholmogorsky-rayon.jpg'
-    },
-    {
-        name: 'Байкал',
-        link: './images/baikal.jpg'
-    }
-];
-
+export const validationConfig = {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__button',
+    inactiveButtonClass: 'popup__button_disabled',
+    inputErrorClass: 'popup__input_type_error',
+    errorClass: 'popup__error_visible'//Зачем он мне нужен если я его нигде не использую?
+  };
 
 function createCard(item) {
     
-    const card = new Card(item, '#template-element', openPopupImg);
+    const card = new Card(item, cardSelector, openPopupImg);
     const elementCard = card.generateCard();
     elementBox.prepend(elementCard);
     return elementCard;
@@ -68,7 +49,6 @@ function createCard(item) {
 
 initialCards.forEach((item) => {
     const elementCard = createCard(item);
-    elementBox.prepend(elementCard);
 });
 
 //Добавление новой карточки
@@ -78,9 +58,9 @@ function saveCard(evt) {
         name: inputNameCard.value,
         link: inputLink.value
     };
-    const elementCard = createCard(cardData);
+    createCard(cardData);
     popupContainerAdd.reset();
-    const popupAddSaveButton = popupContainerAdd.querySelector('.popup__button-save');
+    const popupAddSaveButton = popupContainerAdd.querySelector('.popup__button_disabled');
     closePopup(popupAddCard);
 }
 
@@ -137,7 +117,7 @@ function savePopupProfile(evt) {
 }
 
 
-buttonEdit.addEventListener('click', () => openPopup(popupProfile));
+buttonEdit.addEventListener('click', () => openPopupProfile(popupProfile));
 buttonAddCard.addEventListener('click', () => openPopup(popupAddCard));
 buttonClose.addEventListener('click', () => closePopup(popupProfile));
 buttonAddClose.addEventListener('click', () => closePopup(popupAddCard));
@@ -145,8 +125,8 @@ buttonCloseImg.addEventListener('click', () => closePopup(popupImg));
 popupProfileContainer.addEventListener("submit", savePopupProfile);
 popupContainerAdd.addEventListener("submit", saveCard);
 
-const formEditProfilValidator = new FormValidator(validationConfig, popupProfileContainer);
-formEditProfilValidator.enableValidation();
+const formEditProfileValidator = new FormValidator(validationConfig, popupProfileContainer);
+formEditProfileValidator.enableValidation();
 
 const formCardValidator = new FormValidator(validationConfig, popupContainerAdd);
 formCardValidator.enableValidation();
