@@ -1,5 +1,5 @@
 export default class Card {
-    constructor (items, cardSelector, openPopupImg) {
+    constructor (items , cardSelector, openPopupImg) {
         this._name = items.name;
         this._link = items.link;
         this._cardSelector = cardSelector;
@@ -46,5 +46,6 @@ export default class Card {
         this._element.querySelector('.element__image').addEventListener('click', () => {
             this._openPopupImg(this._name, this._link);
         });
+    
     }
 }
