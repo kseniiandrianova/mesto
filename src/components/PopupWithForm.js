@@ -17,6 +17,8 @@ export default class PopupWithForm extends Popup {
         return this._inputList;
     }
 
+
+
 //Закрытие и сбрасывание формы
     closePopup() {
         super.closePopup();

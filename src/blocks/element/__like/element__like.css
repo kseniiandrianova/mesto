@@ -4,15 +4,15 @@
     min-height: 18.13px;
     padding: 11px;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: 50%;
     background-color: transparent;
     border: none;
     box-sizing: border-box;
     background-size: contain;
-    margin-right: 7px;
-    margin-bottom: 30px;
-    margin-top: 31px;
-    transition: all 0.5s ease;
+    margin-right: 0px;
+    margin-bottom: 3px;
+    margin-top: 18px;
+    transition: all .5s ease;
 }
 
 .element__like:focus {

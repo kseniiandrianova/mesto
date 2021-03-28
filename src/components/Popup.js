@@ -3,9 +3,11 @@ export default class Popup {
         this._popup = popup;
         this._handleEscClose = this._handleEscClose.bind(this);
         this._closeOverlay = this._closeOverlay.bind(this);
-        this._closeButtonEdit = document.querySelector('.popup__button-close');
+        this._closeButtonEdit = document.querySelector('.popup__button-edit-close');
+        this._closeButton = document.querySelector('.popup__button-close');
         this._closeButtonAdd = document.querySelector('.popup__button-add-close');
         this._closeButtonImg = document.querySelector('.popup__close-picture');
+        this._closeButtonDelete = document.querySelector('.popup__close-question');
     }
 
     openPopup() {
@@ -24,7 +26,7 @@ export default class Popup {
 
     _handleEscClose(evt) {
         if (evt.key === 'Escape') {
-            this.closePopup(document.querySelector('popup_opened'));
+            this.closePopup();
         }
     }
 
@@ -37,9 +39,10 @@ export default class Popup {
     }
 
     setEventListeners() {
+        this._closeButton.addEventListener('click', this.closePopup.bind(this));
         this._closeButtonEdit.addEventListener('click', this.closePopup.bind(this));
         this._closeButtonAdd.addEventListener('click', this.closePopup.bind(this));
         this._closeButtonImg.addEventListener('click', this.closePopup.bind(this));
-
+        this._closeButtonDelete.addEventListener('click', this.closePopup.bind(this));
     }
 }

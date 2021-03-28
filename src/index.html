@@ -13,7 +13,9 @@
             </header>
             <main class="content">
                 <section class="profile">
+                    <button class="profile__change-btn" type="button">
                     <img class="profile__pic" src="<%=require('./images/image.jpg')%>" alt="Фото профиля">
+                    </button>
                     <div class="profile__info">
                         <div class="profile__name-edit">
                             <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -36,13 +38,26 @@
                 <img class="element__image" src="#" alt="Фотография">
                 <div class="element__box">
                     <h2 class="element__title"></h2>
-                    <button type="button" class="element__like"></button>
+                    <div class="element__like_box">
+                        <button type="button" class="element__like"></button>
+                        <span class="element__counter">0</span>
+                    </div>
+                    
                 </div>
             </article>
         </template>
+        <section class="popup popup_avatar">
+            <form class="popup__form popup__editformavatar" name="new-avatar" novalidate>
+                <button class="popup__button-close popup__button-avatar-close" type="reset"></button>
+                <h2 class="popup__avatar-title">Обновить аватар</h2>
+                <input id="card-link" type="url" placeholder="Ссылка на картинку" class="popup__input popup__input_photo" name="card-link" required>
+                <span class="error" id="card-link-error"></span>
+                <button class="popup__button-save popup__button" type="submit">Сохранить</button>
+            </form>
+        </section>
         <section class="popup popup_user">
             <form class="popup__container popup__form" name="form-container">
-                <button class="popup__button-close" type="reset"></button>
+                <button class="popup__button-close popup__button-edit-close" type="reset"></button>
                 <h2 class="popup__form-title">Редактировать профиль</h2>
                 <input id="profile-name" type="text" value="Жак-Ив Кусто" class="popup__input popup__input_name" name="profile-name" minlength="2"
                 maxlength="40" required>
@@ -72,6 +87,13 @@
                     <img class="popup__image" src="#" alt="Фотография">
                     <figcaption class="popup__caption"></figcaption>
                 </figure>
+            </div>
+        </section>
+        <section class="popup popup_question">
+            <div class="popup__container popup__form_question popup__form" name="form-container">
+                <button class="popup__button-close popup__close-question" type="reset"></button>
+                <h2 class="popup__title-config">Вы уверены?</h2>
+                <button class="popup__button-save popup__button" type="submit">Да</button>
             </div>
         </section>
         

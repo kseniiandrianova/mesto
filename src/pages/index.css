@@ -22,6 +22,16 @@
 @import url("../blocks/popup/__caption/popup__caption.css");
 @import url("../blocks/popup/__button/_disabled/popup__button_disabled.css");
 @import url("../blocks/popup/__form/popup__form.css");
+@import url("../blocks/popup/_avatar/popup_avatar.css");
+@import url("../blocks/popup/__avatar-title/popup__avatar-title.css");
+@import url("../blocks/popup/__button-question/popup__button-question.css");
+@import url("../blocks/popup/__close-question/popup__close-question.css");
+@import url("../blocks/popup/__form/_question/popup__form_question.css");
+@import url("../blocks/popup/__input/_photo/popup__input_photo.css");
+@import url("../blocks/popup/__title-config/popup__title-config.css");
+@import url("../blocks/popup/_question/popup_question.css");
+@import url("../blocks/popup/__editformavatar/popup__editformavatar.css");
+@import url("../blocks/popup/__button-avatar-close/popup__button-avatar-close.css");
 
 
 @import url("../blocks/header/header.css");
@@ -35,15 +45,21 @@
 @import url("../blocks/profile/__description/profile__description.css");
 @import url("../blocks/profile/__edit-button/profile__edit-button.css");
 @import url("../blocks/profile/__add-button/profile__add-button.css");
+@import url('../blocks/profile/__change-btn/profile__change-btn.css');
+
 
 @import url("../blocks/elements/elements.css");
 @import url("../blocks/element/element.css");
 @import url("../blocks/element/__box/element__box.css");
 @import url("../blocks/element/__button-delete/element__button-delete.css");
+@import url("../blocks/element/__button-delete/_active/element__button-delete_active.css");
+@import url("../blocks/element/__button/_clear/element__button_clear.css");
 @import url("../blocks/element/__image/element__image.css");
 @import url("../blocks/element/__title/element__title.css");
 @import url("../blocks/element/__like/element__like.css");
 @import url("../blocks/element/__like/_active/element__like_active.css");
+@import url("../blocks/element/__like/_box/element__like_box.css");
+@import url("../blocks/element/__counter/element__counter.css");
 
 @import url("../blocks/error/error.css");
 
