@@ -17,9 +17,6 @@ export default class Api {
           headers: this._headers
         })
         .then(this._handleResponse)
-        .catch((err) => {
-          console.log(err);
-        })
   }
 
   addCard(name, link) {
