@@ -118,11 +118,9 @@ function createCard(item) {
 
 //Открытие картинки на весь эран
 function openPopupImg (name, link) {
-    const popupWithImage = new PopupWithImage(popupImg);
     popupWithImage.openPopup(name, link);
     picture.src = link;
     pictureCaption.textContent = name;
-    popupWithImage.setEventListeners();
 }
 
 //Создание попапа карточки
@@ -145,12 +143,12 @@ function saveCard(evt) {
     api
     .addCard(cardData.name, cardData.link)
     .then((item) => {
-        //const card = new Card(item, userId, cardSelector, openPopupImg, 
-        //   openPopupDelete, api);
+        const popupAddSaveButton = popupContainerAdd.querySelector('.popup__button_disabled');
         const elementCard = createCard(item);
         prependCard(elementCard);
-        //cardList.addItemPrepend(elementCard);
+        popupContainerAdd.reset();
         popupCard.closePopup(popupAddCard);
+        
     })
     .catch((err) => {
         console.log(err)
@@ -160,8 +158,7 @@ function saveCard(evt) {
         
     })
     
-    popupContainerAdd.reset();
-    const popupAddSaveButton = popupContainerAdd.querySelector('.popup__button_disabled');
+    
     
 }
 
@@ -243,7 +240,7 @@ function savePopupAvatar (evt) {
     })
     .finally(()=> {
         
-        textLoader(popupProfile, false, 'Сохранить');
+        textLoader(popupAvatar, false, 'Сохранить');
     })
 }
 
@@ -292,4 +289,3 @@ formCardValidator.enableValidation();
 
 const formAvatarProfileValidator = new FormValidator(validationConfig, popupAvatarContainer);
 formAvatarProfileValidator.enableValidation();
-

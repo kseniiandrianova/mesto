@@ -1,5 +1,5 @@
 .popup__input_photo {
-	width: calc(100% - 72px);
+	width: 100%;
 	height:17px;
 	margin: 8px auto 0px auto;
 	padding: 5px 0px 13px 0px;

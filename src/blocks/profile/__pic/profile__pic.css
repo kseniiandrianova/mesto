@@ -1,10 +1,12 @@
 .profile__pic {
-    width: 100%;
+    width: 120px;
+    height: 120px;
     display: flex;
     margin-left: 0;
     border-radius: 100px;
     max-width: 120px;
     min-height: 120px;
+    object-fit: cover;
 }
 
 .profile__pic:hover {
